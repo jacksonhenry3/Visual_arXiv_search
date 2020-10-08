@@ -3,3 +3,6 @@
 d3 for network visualization e.g. [Example](https://observablehq.com/@d3/disjoint-force-directed-graph)
 
 arxiv API [Documentation](https://arxiv.org/help/api)
+
+[ADS API]
+(https://github.com/adsabs/adsabs-dev-api)
