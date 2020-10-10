@@ -55,7 +55,20 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+   .links line {
+     stroke: #999;
+     stroke-opacity: 0.6;
+   }
 
+   .nodes circle {
+     stroke: #fff;
+     stroke-width: 1.5px;
+   }
+
+   text {
+     font-family: sans-serif;
+     font-size: 10px;
+   }
 
 
 
@@ -74,7 +87,12 @@ textarea {
      font-weight: 900;
    }
 
-
+   svg
+   {
+     background:red;
+     max-width:960px;
+     width:90%;
+   }
    header {
      background: #957DAD;
      padding-bottom: 2rem;
