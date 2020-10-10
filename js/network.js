@@ -4,20 +4,30 @@ var svg = d3.select("#network"),
 
 var color = d3.scaleOrdinal(d3.schemeCategory20);
 
-var simulation = d3.forceSimulation()
-    .force("link", d3.forceLink().id(function(d) { return d.id; }))
-    .force("charge", d3.forceManyBody())
-    .force("center", d3.forceCenter(width / 2, height / 2));
+var simulation
 
 d3.json("miserables.json", function(error, graph) {
   if (error) throw error;
+
+   simulation = d3.forceSimulation()
+      .force("link", d3.forceLink().id(function(d) { return d.id; }))
+      .force("collision",d3.forceCollide([25]))
+      .force("charge", d3.forceManyBody().strength(-50).distanceMax([10]) )
+      .force("center", d3.forceCenter(width / 2, height / 2));
+
+  function get_radius(d) {
+    var connections = link.filter(function(l) {
+    return l.source  == d.id || l.target  == d.id
+    });
+    return(connections.size()*1+5)
+  }
 
   var link = svg.append("g")
       .attr("class", "links")
     .selectAll("line")
     .data(graph.links)
     .enter().append("line")
-      .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
+      .attr("stroke-width", function(d) { return 1; });
 
   var node = svg.append("g")
       .attr("class", "nodes")
@@ -26,7 +36,7 @@ d3.json("miserables.json", function(error, graph) {
     .enter().append("g")
 
   var circles = node.append("circle")
-      .attr("r", 5)
+      .attr("r",  function(d){return(get_radius(d))})
       .attr("fill", function(d) { return color(d.group); })
       .call(d3.drag()
           .on("start", dragstarted)
@@ -37,7 +47,7 @@ d3.json("miserables.json", function(error, graph) {
       .text(function(d) {
         return d.id;
       })
-      .attr('x', 6)
+      .attr('x',function(d){return(-get_radius(d))})
       .attr('y', 3);
 
   node.append("title")
