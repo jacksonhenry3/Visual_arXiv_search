@@ -1,0 +1,17 @@
+Javascript jQuery version
+result = $.ajax({
+            url: "https://api.adsabs.harvard.edu/v1/search/query?q=star",
+            type: "GET",
+            headers: {
+                "Access-Control-Allow-Origin":"*",
+                "Authorization":"Bearer [Token]"
+            },
+            crossDomain: true,
+            success: function (response) {
+                var resp = response
+            },
+            error: function (xhr, status) {
+                console.log("error");
+            }
+        });
+result.responseText
