@@ -56,7 +56,7 @@ d3.json("miserables.json", function(error, graph) {
       .attr('y', 3);
   var hover  = node.append("text")
     .text(function(d) {
-      if (get_radius(d)=<10)
+      if (get_radius(d)<=10)
         {
           return d.id;
         }})
