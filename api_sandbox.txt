@@ -4,7 +4,7 @@ result = $.ajax({
             type: "GET",
             headers: {
                 "Access-Control-Allow-Origin":"*",
-                "Authorization":"Bearer [Token]"
+                "Authorization":"Bearer dnp7EQ5y47A222l6fOc0XCbE3YCPrb6egKygc56I"
             },
             crossDomain: true,
             success: function (response) {
@@ -14,4 +14,3 @@ result = $.ajax({
                 console.log("error");
             }
         });
-result.responseText
