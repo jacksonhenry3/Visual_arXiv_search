@@ -44,14 +44,28 @@ d3.json("miserables.json", function(error, graph) {
           .on("end", dragended));
 
   var lables = node.append("text")
+
       .text(function(d) {
-        return d.id;
+        if (get_radius(d)>10) {
+          return d.id;
+        }
+
       })
+      .attr("class",'txt')
       .attr('x',function(d){return(-get_radius(d))})
       .attr('y', 3);
+  var hover  = node.append("text")
+    .text(function(d) {
+      if (get_radius(d)<10)
+        {
+          return d.id;
+        }})
+    .attr("class",'hovertext')
+    .attr('x',function(d){return(-get_radius(d))})
+    .attr('y', 3);
 
-  node.append("title")
-      .text(function(d) { return d.id; });
+  // node.append("title")
+  //     .text(function(d) { return d.id; });
 
   simulation
       .nodes(graph.nodes)
