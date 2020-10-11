@@ -125,7 +125,7 @@ textarea {
     padding;right:4rem;
   }
 
-  input[type=text] {
+  input[type=search] {
     color:#222;
     font-size: 1.3rem;
     text-align: center;
@@ -141,7 +141,7 @@ textarea {
   transition: all .4s;
 }
 
-input[type=text]:focus {
+input[type=search]:focus {
   outline: none;
   box-shadow: 0px 0px 3px .5px rgba(0,0,0.1) inset;
 }

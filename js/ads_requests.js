@@ -39,3 +39,9 @@ function searchRequest(fields) {
     return searchRequestFromString(searchString)
   }
 }
+
+
+// var res = searchRequestFromString('"clumpy galaxies" candels year:2015')
+
+// alert_when_read = function() {console.log(res["readyState"]);if (res["readyState"]==4) {console.log(res["responseJSON"]["response"]["docs"])}}
+// window.setInterval(function(){console.log(res["readyState"])},2)
