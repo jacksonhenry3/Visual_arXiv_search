@@ -6,7 +6,7 @@ var color = d3.scaleOrdinal(d3.schemeCategory20);
 
 var simulation
 
-d3.json("miserables.json", function(error, graph) {
+d3.json("Example_Data/miserables.json", function(error, graph) {
   if (error) throw error;
 
    simulation = d3.forceSimulation()
