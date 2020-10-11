@@ -70,7 +70,13 @@ textarea {
      font-size: 10px;
    }
 
+   g:hover > .hovertext {
+     display: block;
+   }
 
+   .hovertext{
+     display: none;
+   }
 
    body {
      display: grid;
@@ -86,7 +92,10 @@ textarea {
    {
      font-weight: 900;
    }
-
+   text
+   {
+     background: red;
+   }
    svg
    {
      /* background:red; */
