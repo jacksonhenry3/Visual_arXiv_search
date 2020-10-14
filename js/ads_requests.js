@@ -14,8 +14,7 @@ function searchRequestFromString(searchString) {
     url: assembleSearchURL(searchString),
     type: "GET",
     headers: {
-        "Access-Control-Allow-Origin":"*",
-        "Authorization":"Bearer dnp7EQ5y47A222l6fOc0XCbE3YCPrb6egKygc56I"
+        "Authorization":"Bearer "+token,
     },
     crossDomain: true,
     success: function (response) {
